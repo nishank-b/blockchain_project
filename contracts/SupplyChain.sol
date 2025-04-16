@@ -252,20 +252,23 @@ contract SupplyChain {
 
     // To add new medicines to the stock
     function addMedicine(string memory _name, string memory _description)
-        public
-        onlyByOwner()
-    {
-        require((rmsCtr > 0) && (manCtr > 0) && (disCtr > 0) && (retCtr > 0));
-        medicineCtr++;
-        MedicineStock[medicineCtr] = medicine(
-            medicineCtr,
-            _name,
-            _description,
-            0,
-            0,
-            0,
-            0,
-            STAGE.Init
-        );
-    }
+    public
+{
+    uint256 rmsId = findRMS(msg.sender);
+    require(rmsId > 0, "Only registered RMS can add medicines.");
+    require((manCtr > 0) && (disCtr > 0) && (retCtr > 0));
+
+    medicineCtr++;
+    MedicineStock[medicineCtr] = medicine(
+        medicineCtr,
+        _name,
+        _description,
+        0,
+        0,
+        0,
+        0,
+        STAGE.Init
+    );
+}
+
 }

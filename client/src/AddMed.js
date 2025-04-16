@@ -78,16 +78,20 @@ function AddMed() {
     }
 
     const handlerSubmitMED = async (event) => {
-        event.preventDefault();
-        try {
-            const reciept = await SupplyChain.methods.addMedicine(MedName, MedDes).send({ from: currentaccount });
-            if (reciept) {
-                loadBlockchaindata();
-            }
-        } catch (err) {
-            alert("An error occurred!!!");
+    event.preventDefault();
+    try {
+        const reciept = await SupplyChain.methods
+            .addMedicine(MedName, MedDes)
+            .send({ from: currentaccount });
+        if (reciept) {
+            loadBlockchaindata();
         }
+    } catch (err) {
+        console.error("Transaction failed:", err);
+        alert("An error occurred: " + err.message);
     }
+}
+
 
     return (
         <div style={styles.container}>
@@ -101,7 +105,8 @@ function AddMed() {
                 <form onSubmit={handlerSubmitMED} style={styles.form}>
                     <input className="form-control-sm" type="text" onChange={handlerChangeNameMED} placeholder="Battery Name" required />
                     <input className="form-control-sm" type="text" onChange={handlerChangeDesMED} placeholder="Battery Description" required />
-                    <button className="btn btn-outline-success btn-sm" style={styles.submitButton}>Order</button>
+                    <button type="submit" className="btn btn-outline-success btn-sm" style={styles.submitButton}>Order</button>
+
                 </form>
                 <br />
                 <h5>Ordered Batteries:</h5>
