@@ -10,3 +10,70 @@ hr{
     margin-top: 5rem;
 }
 
+/* App.css */
+:root {
+    --primary-color: #4a6fa5;
+    --secondary-color: #6b9080;
+    --accent-color: #ff7e5f;
+    --light-bg: #f8f9fa;
+    --dark-text: #2d3436;
+    --light-text: #f8f9fa;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--dark-text);
+    background-color: #f5f7fa;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .wait {
+    text-align: center;
+    margin-top: 5rem;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+  }
+  
+  .container-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    margin-bottom: 30px;
+  }
+  
+  .btn {
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+  
+  .btn-primary:hover {
+    background-color: #3a5a80;
+    border-color: #3a5a80;
+    transform: translateY(-2px);
+  }
+  
+  .form-control {
+    border-radius: 5px;
+    padding: 10px 15px;
+  }
+  
+  .table {
+    margin-top: 20px;
+  }
+  
+  .table th {
+    background-color: var(--primary-color);
+    color: white;
+  }

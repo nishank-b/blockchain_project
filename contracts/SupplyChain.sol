@@ -22,7 +22,7 @@ contract SupplyChain {
         _;
     }
 
-    //stages of a medicine in pharma supply chain
+    //stages of a component
     enum STAGE {
         Init,
         RawMaterialSupply,
@@ -31,9 +31,9 @@ contract SupplyChain {
         Retail,
         sold
     }
-    //using this we are going to track every single medicine the owner orders
+    //using this we are going to track every single component the owner orders
 
-    //Medicine count
+    //Component count
     uint256 public medicineCtr = 0;
     //Raw material supplier count
     uint256 public rmsCtr = 0;
@@ -67,7 +67,7 @@ contract SupplyChain {
     {
         require(medicineCtr > 0);
         if (MedicineStock[_medicineID].stage == STAGE.Init)
-            return "Medicine Ordered";
+            return "Ordered";
         else if (MedicineStock[_medicineID].stage == STAGE.RawMaterialSupply)
             return "Raw Material Supply Stage";
         else if (MedicineStock[_medicineID].stage == STAGE.Manufacture)
@@ -77,7 +77,7 @@ contract SupplyChain {
         else if (MedicineStock[_medicineID].stage == STAGE.Retail)
             return "Retail Stage";
         else if (MedicineStock[_medicineID].stage == STAGE.sold)
-            return "Medicine Sold";
+            return " Sold";
     }
 
     //To store information about raw material supplier
@@ -245,7 +245,7 @@ contract SupplyChain {
         require(_medicineID > 0 && _medicineID <= medicineCtr);
         uint256 _id = findRET(msg.sender);
         require(_id > 0);
-        require(_id == MedicineStock[_medicineID].RETid); //Only correct retailer can mark medicine as sold
+        require(_id == MedicineStock[_medicineID].RETid); //Only correct retailer can mark component as sold
         require(MedicineStock[_medicineID].stage == STAGE.Retail);
         MedicineStock[_medicineID].stage = STAGE.sold;
     }

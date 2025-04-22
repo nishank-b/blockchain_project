@@ -1,50 +1,187 @@
-.assign-roles-container {
+/* AssignRoles.css */
+
+.roles-container {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
-    margin: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.header-container {
+.page-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
 }
 
-.home-button {
-    margin-left: 10px;
-    padding: 5px 10px;
+.page-header h1 {
+    color: var(--primary-color);
+    margin: 0;
 }
 
-h4 {
-    margin-bottom: 15px;
+.account-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.account-info span {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.register-role-card {
+    margin-bottom: 40px;
+    padding: 25px;
+}
+
+.register-role-card h2 {
+    margin-top: 0;
+    color: var(--primary-color);
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
 }
 
 .role-form {
-    margin-bottom: 30px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #fff;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
 .form-group {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
-.table-sm {
-    margin-top: 20px;
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
 }
 
-.table thead th {
-    background-color: #f1f1f1;
+.form-control {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
 }
 
-.table tbody tr {
-    background-color: #fff;
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
 }
 
-.table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+.submit-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 20px;
+    align-self: flex-end;
+    grid-column: 1 / -1;
+    max-width: 200px;
+}
+
+.submit-btn:hover {
+    background-color: #3a5a80;
+}
+
+.roles-list {
+    display: grid;
+    gap: 30px;
+}
+
+.role-category {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+}
+
+.role-category h3 {
+    margin-top: 0;
+    color: var(--secondary-color);
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.role-table-container {
+    overflow-x: auto;
+}
+
+.role-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.role-table th, .role-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.role-table th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.role-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+.address-cell {
+    font-family: monospace;
+    font-size: 0.85rem;
+    word-break: break-all;
+}
+
+.no-roles {
+    padding: 20px;
+    text-align: center;
+    color: #666;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+/* Loading spinner (same as Track.css) */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .role-form {
+        grid-template-columns: 1fr;
+    }
+    
+    .submit-btn {
+        max-width: 100%;
+    }
 }
