@@ -24,7 +24,7 @@
     <img src="https://github.com/rishav4101/eth-supplychain-dapp/blob/main/images/web3.jpg" width="60">
   </a>
 </p>
-
+<img src ="https://github.com/nishank-b/blockchain_project/blob/master/scm_component.png" width="60">
 <h4 align="center">A simple Supply Chain setup with <a href="https://docs.soliditylang.org/en/v0.8.4/" target="_blank">Solidity</a>.</h4>
 
 <p align="center">
