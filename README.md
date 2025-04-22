@@ -24,7 +24,7 @@
     <img src="https://github.com/rishav4101/eth-supplychain-dapp/blob/main/images/web3.jpg" width="60">
   </a>
 </p>
-<img src ="https://github.com/nishank-b/blockchain_project/blob/master/scm_home.png" width="200">
+<img src ="https://github.com/nishank-b/blockchain_project/blob/master/scm_home.png" >
 
 <img src ="https://github.com/nishank-b/blockchain_project/blob/master/scm_rolemanagement.png" width="200">
 
