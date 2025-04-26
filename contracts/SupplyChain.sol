@@ -10,10 +10,10 @@ contract SupplyChain {
         Owner = msg.sender;
     }
 
-    //Roles (flow of pharma supply chain)
+    //Roles (flow of supply chain)
     // RawMaterialSupplier; //This is where Manufacturer will get raw materials to make medicines
-    // Manufacturer;  //Various WHO guidelines should be followed by this person
-    // Distributor; //This guy distributes the medicines to retailers
+    // Manufacturer;  //Various  guidelines should be followed by this person
+    // Distributor; //This guy distributes the components to retailers
     // Retailer; //Normal customer buys from the retailer
 
     //modifier to make sure only the owner is using the function
@@ -253,10 +253,9 @@ contract SupplyChain {
     // To add new medicines to the stock
     function addMedicine(string memory _name, string memory _description)
     public
+    onlyByOwner
 {
-    uint256 rmsId = findRMS(msg.sender);
-    require(rmsId > 0, "Only registered RMS can add medicines.");
-    require((manCtr > 0) && (disCtr > 0) && (retCtr > 0));
+    require((manCtr > 0) && (disCtr > 0) && (retCtr > 0), "All roles must be registered");
 
     medicineCtr++;
     MedicineStock[medicineCtr] = medicine(

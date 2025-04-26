@@ -82,7 +82,11 @@
 /* Shared styles from AssignRoles.css */
 .page-header, .account-info, .home-btn, .form-group, 
 .form-control, .submit-btn, .loading-container, 
-.spinner, @keyframes spin {
+.spinner {
+    /* Same as in AssignRoles.css */
+}
+
+@keyframes spin {
     /* Same as in AssignRoles.css */
 }
 
